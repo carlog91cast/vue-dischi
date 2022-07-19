@@ -1,13 +1,17 @@
 
 
 <template>
-    <div class="container song-container">
-        <div class="row">
-            <div class="col-2">
-                <SingleSong v-for="(song, index) in songList" :key="index" :songCard="song" />
+    <main>
+        <div class="main-wrapper">
+            <div class="container-fluid">
+                <div class="row row-cols-md-5 row-cols-sm-3  ">
+                    <div v-for="(song, index) in songList" class="col" :key="index" songCard="song">
+                        <SingleSong :songCard="song" />
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
 </template>
 
 <script>
@@ -46,9 +50,19 @@ export default {
 
 <style lang="scss" scoped>
 @import '../style/common.scss';
+@import "~bootstrap/scss/bootstrap";
 
-.song-container {
-    background-color: #1E2D3B;
+main{
+    background-color: #1E2D3B;;
     height: 100%;
+    
+    .main-wrapper{
+        padding: 50px 0;
+        margin: 0 auto;
+        width: 70%;
+        .col{
+            display: flex;
+        }
+    }
 }
 </style>
