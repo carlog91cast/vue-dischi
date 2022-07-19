@@ -1,18 +1,18 @@
 <template>
     <div class="card">
         <div class="song-img">
-            <img :src="info.poster" alt="">
+            <img :src="songCard.poster" alt="">
         </div>
-        <h3>{{ info.title }}</h3>
-        <h4>{{ info.author }}</h4>
-        <h5>{{ info.year }}</h5>
+        <h3>{{ songCard.title }}</h3>
+        <h4>{{ songCard.author }}</h4>
+        <h5>{{ songCard.year }}</h5>
     </div>
 </template>
 
 <script>
 export default {
-    name: "SongCard",
-    props: ['info'],
+    name: "SingleSong",
+    props: ['songCard'],
 }
 </script>
 
