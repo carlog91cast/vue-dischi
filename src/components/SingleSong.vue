@@ -1,5 +1,5 @@
 <template>
-    <div class="card">
+    <div class="song-card">
         <div class="song-img">
             <img :src="songCard.poster" alt="">
         </div>
@@ -20,12 +20,12 @@ export default {
 <style lang="scss" scoped>
 @import'@/style/common.scss';
 @import "~bootstrap/scss/bootstrap";
-.card {
+.song-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1rem;
-    background-color: $bg_first_color;
+    background-color: #2E3A46 ;
     text-align: center;
     margin-bottom: 1rem;
 
@@ -41,7 +41,7 @@ export default {
 
     h3 {
         width: 100%;
-        font-size: 1.5rem;
+        font-size: 20px;
         padding: 0.5rem 0;
         margin-bottom: 0;
         color: white;
@@ -50,14 +50,14 @@ export default {
     h4 {
         width: 100%;
         font-size: 1.2rem;
-        color: $subtext_color;
-        margin-bottom: 0;
+        color:  darkgray;
+        margin-top: 20px;
     }
 
     h5 {
         width: 100%;
         font-size: 1rem;
-        color: $subtext_color;
+        color:   darkgray;
     }
 }
 </style>
