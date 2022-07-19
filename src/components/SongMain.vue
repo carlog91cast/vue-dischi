@@ -1,10 +1,9 @@
 
 
 <template>
-    <div class="container">
-        <ListSong />
+    <div class="container song-container">
         <div class="row">
-            <div class="col-2">
+            <div v-for(song, index) in   class="col-2">
                 <SingleSong />
             </div>
         </div>
@@ -14,19 +13,21 @@
 <script>
 import axios from "axios";
 import SingleSong from './SingleSong.vue';
-import ListSong from './ListSong.vue';
+
 
 export default {
     name: "SongMain",
     components: {
         SingleSong,
-        ListSong,
     },
     data() {
-
+        return{
+            url: "https://flynn.boolean.careers/exercises/api/array/music",
+            songList:[],
+        }
     },
     created() {
-        this.getSongCard;
+        this.getSongCard();
     },
     methods: {
         getSongCard() {
@@ -46,4 +47,9 @@ export default {
 
 <style lang="scss" scoped>
 @import '../style/common.scss';
+
+.song-container{
+    background-color: #1E2D3B;
+    height: 100%;
+}
 </style>
