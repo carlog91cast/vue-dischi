@@ -26,7 +26,7 @@ export default {
 
     },
     created() {
-
+        this.getSongCard;
     },
     methods: {
         getSongCard() {
