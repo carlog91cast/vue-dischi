@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    
+    <SongHeader/>
+    <SongMain/>
   </div>
 </template>
 
@@ -17,6 +18,8 @@ export default {
 }
 </script>
 
-<style>
+
+<style lang="scss">
+@import "~bootstrap/scss/bootstrap";
 
 </style>
