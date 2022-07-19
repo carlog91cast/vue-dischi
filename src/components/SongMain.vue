@@ -3,8 +3,8 @@
 <template>
     <div class="container song-container">
         <div class="row">
-            <div v-for(song, index) in   class="col-2">
-                <SingleSong />
+            <div v-for="(song, index) in songList" :key="index" :element="song" class="col-2">
+                <SingleSong :info="song" />
             </div>
         </div>
     </div>
@@ -22,7 +22,6 @@ export default {
     },
     data() {
         return{
-            url: "https://flynn.boolean.careers/exercises/api/array/music",
             songList:[],
         }
     },
@@ -33,8 +32,8 @@ export default {
         getSongCard() {
             axios.get('https://flynn.boolean.careers/exercises/api/array/music')
             .then((result) =>{
-                console.log(result.data.result)
-                this.songs = result.data.result;
+                console.log(result.data.respose)
+                this.songs = result.data.response;
             })
             .catch((error)=>{
                 console.warn(error);
