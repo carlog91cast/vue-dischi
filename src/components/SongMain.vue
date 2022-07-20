@@ -4,7 +4,7 @@
     <main>
         <div class="main-wrapper">
             <div class="form-floating mb-3">
-                <select v-mode="" class="form-select pt-2 bg-dark" id="floatingSelect">
+                <select class="form-select pt-2 bg-dark c-white" id="floatingSelect">
                     <option v-for="(genre, index) in genresList" :key="index" value="genre">{{genre}}</option>
                 </select>
             </div>
@@ -97,7 +97,9 @@ main {
         padding: 50px 0;
         margin: 0 auto;
         width: 70%;
-
+        .c-white{
+            color: white;
+        }
         .col {
             display: flex;
         }
