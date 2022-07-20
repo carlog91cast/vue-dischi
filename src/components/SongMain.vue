@@ -4,12 +4,8 @@
     <main>
         <div class="main-wrapper">
             <div class="form-floating mb-3">
-                <select class="form-select pt-2 bg-dark" id="floatingSelect">
-                    <option selected>Filtra per genere</option>
-                    <option value="1">Rock</option>
-                    <option value="2">Pop</option>
-                    <option value="3">Jazz</option>
-                    <option value="4">Metal</option>
+                <select v-mode="" class="form-select pt-2 bg-dark" id="floatingSelect">
+                    <option v-for="(genre, index) in genresList" :key="index" value="genre">{{genre}}</option>
                 </select>
             </div>
             <div class="container-fluid">
@@ -75,7 +71,7 @@ export default {
                 filtered = this.songList.filter((album) => album.genre == this.filter);
             }
             return filtered
-            
+
         },
 
 
@@ -83,7 +79,7 @@ export default {
     created() {
         this.getSongCard();
     }
- }
+}
 
 </script>
 
