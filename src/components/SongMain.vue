@@ -46,6 +46,8 @@ export default {
                 .then((result) => {
                     console.log(result.data.response)
                     this.songList = result.data.response;
+                    this.genresList = this.filterGenres();
+                    console.log(genresList)
                 })
                 .catch((error) => {
                     console.warn(error);
