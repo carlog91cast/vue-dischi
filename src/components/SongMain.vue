@@ -58,7 +58,6 @@ export default {
             this.songList.forEach((album) => {
                 if (!genresList.includes(album.genre)) {
                     genresList.push(album.genre);
-                    this.genresList.push(album.genre);
                     console.log(genresList);
                 }
             });
