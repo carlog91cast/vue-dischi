@@ -55,6 +55,7 @@ export default {
 main{
     background-color: #1E2D3B;;
     height: 100%;
+    width: 100vw;
     
     .main-wrapper{
         padding: 50px 0;

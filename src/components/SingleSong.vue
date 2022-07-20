@@ -41,10 +41,12 @@ export default {
 
     h3 {
         width: 100%;
-        font-size: 20px;
+        font-size: 18px;
         padding: 0.5rem 0;
         margin-bottom: 0;
         color: white;
+        text-transform: uppercase;
+        margin-top: 10px;
     }
 
     h4 {
