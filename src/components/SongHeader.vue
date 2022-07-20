@@ -2,9 +2,13 @@
 
 <template>
     <header>
-        <div class="spotify-logo">
-            <img class="w-100" src="../assets/Spotify_logo_without_text.svg.png" alt="spotify logo">
-        </div>
+        <section>
+            <div class="spotify-logo">
+                <img class="w-100" src="../assets/Spotify_logo_without_text.svg.png" alt="spotify logo">
+            </div>
+            <!-- <div>inserisco il component in cui vado ad inserire il select</div> -->
+        </section>
+
     </header>
 </template>
 
@@ -18,7 +22,7 @@ export default {
 
 header {
     width: 100vw;
-    height: 50px;
+    height: 20%;
     background-color: #2E3A46;
     color: white;
 

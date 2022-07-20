@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <!-- nell'header richiamo con @select la funzione che gestisce la selezione dei generi musicali  -->
     <SongHeader/>
     <SongMain/>
   </div>
