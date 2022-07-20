@@ -4,7 +4,7 @@
     <main>
         <div class="main-wrapper">
             <div class="form-floating mb-3">
-                <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                <select class="form-select pt-2 bg-dark" id="floatingSelect">
                     <option selected>Filtra per genere</option>
                     <option value="1">Rock</option>
                     <option value="2">Pop</option>
@@ -41,19 +41,22 @@ export default {
         }
     },
     methods: {
+        getSelected(select) {
+            this.filter = select;
+        },
         getSongCard() {
             axios.get('https://flynn.boolean.careers/exercises/api/array/music')
                 .then((result) => {
                     console.log(result.data.response)
                     this.songList = result.data.response;
-                    this.genresList = this.filterGenres();
-                    console.log(genresList)
+                    this.genresList = this.getGenres();
+
                 })
                 .catch((error) => {
                     console.warn(error);
                 })
         },
-        filterGenres() {
+        getGenres() {
             const genresList = [];
             this.songList.forEach((album) => {
                 if (!genresList.includes(album.genre)) {
@@ -62,14 +65,25 @@ export default {
                 }
             });
             return genresList;
+
+        },
+        filterGenres() {
+            let filtered = [];
+            if (this.filter == '') {
+                filtered = this.songList;
+            } else if (this.genresList.includes(this.filter)) {
+                filtered = this.songList.filter((album) => album.genre == this.filter);
+            }
+            return filtered
             
         },
-    },
 
-created() {
-    this.getSongCard();
-},
-}
+
+    },
+    created() {
+        this.getSongCard();
+    }
+ }
 
 </script>
 
